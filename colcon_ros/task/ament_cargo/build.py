@@ -21,13 +21,13 @@ class AmentCargoBuildTask(TaskExtensionPoint):
         super().__init__()
         satisfies_version(TaskExtensionPoint.EXTENSION_POINT_VERSION, '^1.0')
 
-    def add_arguments(self, *, parser):  # noqa: D102
-        parser.add_argument(
-            '--ament-cargo-args',
-            nargs='*', metavar='*', type=str.lstrip,
-            help="Pass arguments to 'ament_cargo' packages. "
-            'Arguments matching other options must be prefixed by a space,\n'
-            'e.g. --ament-cargo-args " --help"')
+    # def add_arguments(self, *, parser):  # noqa: D102
+    #     parser.add_argument(
+    #         '--ament-cargo-args',
+    #         nargs='*', metavar='*', type=str.lstrip,
+    #         help="Pass arguments to 'ament_cargo' packages. "
+    #         'Arguments matching other options must be prefixed by a space,\n'
+    #         'e.g. --ament-cargo-args " --help"')
 
     async def build(self):  # noqa: D102
         args = self.context.args
